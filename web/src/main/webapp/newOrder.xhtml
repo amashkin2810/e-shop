@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<ui:composition template="mainTemplate.xhtml">
+
+
+  <ui:define name="content">
+
+    <h1>Choose the Product</h1>
+
+
+
+    <p:dataTable id="itemlist2" value="#{itemEJB.findAllItems()}" var="item2" border="1">
+
+
+      <p:column headerText="Name">
+        <h:outputText value="#{item2.name}" />
+      </p:column>
+
+      <p:column headerText="Price">
+        <h:outputText value="#{item2.price}" />
+      </p:column>
+
+      <p:column headerText="Descriptions">
+        <h:outputText value="#{item2.description}" />
+      </p:column>
+
+      <p:column style="width:64px;text-align: center">
+        <p:commandButton action="#{itemController.doAddItem}"  value="Add">
+          <f:setPropertyActionListener value="#{item2}" target="#{itemController.item}"  />
+        </p:commandButton>
+      </p:column>
+
+    </p:dataTable>
+
+
+  </ui:define>
+
+</ui:composition>
+
+
+
+</html>

@@ -1,0 +1,3 @@
+INSERT INTO CUSTOMER(ID, FIRSTNAME, LASTNAME, EMAIL,PHONENUMBER) values (2000, 'Alex','Ivanov', 'qwerty@qwerty.com', '12345678')
+
+

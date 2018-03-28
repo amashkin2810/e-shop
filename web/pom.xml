@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <parent>
+      <artifactId>e-shop</artifactId>
+      <groupId>com.example</groupId>
+      <version>1.0-SNAPSHOT</version>
+   </parent>
+
+   <artifactId>e-shop-web</artifactId>
+   <packaging>war</packaging>
+
+   <name>e-shop - web</name>
+
+
+	<dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>6.2</version>
+        </dependency>
+    </dependencies>
+
+   <build>
+      <finalName>${project.artifactId}</finalName>
+      <plugins>
+         <plugin>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>${version.war.plugin}</version>
+            <configuration>
+               <!-- Java EE 6 doesn't require web.xml, Maven needs to catch up! -->
+               <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+
+</project>

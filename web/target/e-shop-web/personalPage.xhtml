@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<ui:composition template="mainTemplate.xhtml">
+<ui:define name="content">
+
+
+    <h:form>
+<h1></h1>
+        <p:panel>
+        <h:outputText id="Carttkk" value="Welcome, #{userController.user.firstname}."/>
+        </p:panel>
+
+        <p:button  outcome="newOrder" value="New order" id="newOrder" update="growl"  styleClass="ui-priority-primary" />
+        <p:commandButton action="#{userController.logout}" value="Logout" />
+
+
+        <h1></h1>
+        <p:dataTable id="customersss4" value="#{orderController.dofindOrderByCustomerId()}" var="findAllCustomersOrder2" border="1">
+            <p:column headerText="Id">
+                <h:outputText  value="#{findAllCustomersOrder2.id}" />
+            </p:column>
+
+            <p:column headerText="dateCreated">
+                <h:outputText value="#{findAllCustomersOrder2.dateCreated}" />
+            </p:column>
+
+            <p:column headerText="amount">
+                <h:outputText value="#{findAllCustomersOrder2.amount}" />
+            </p:column>
+
+
+        </p:dataTable>
+        <h1></h1>
+</h:form>
+
+
+
+</ui:define>
+</ui:composition>
+
+</html>

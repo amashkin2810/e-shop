@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<ui:composition template="mainTemplate.xhtml">
+
+
+    <ui:define name="content">
+        <h1></h1>
+        <h:form>
+            <p:growl id="growl" sticky="true" showDetail="true"/>
+
+                <p:tab id="personal" title="Personal">
+                    <p:panel header="Order detail">
+                        <p:messages />
+
+                        <h:panelGrid id="panel" columns="1" cellspacing="1">
+                            <h:outputText value="First name: #{userController.user.firstname}" />
+                            <h:outputText value="Last name: #{userController.user.lastname}" />
+                            <h:outputText value="Email: #{userController.user.email}" />
+                            <h:outputText value="Phone: #{userController.user.phone}" />
+                            <h:outputText value="Address: #{userController.user.address}" />
+
+                            <h1></h1>
+
+                            <p:dataTable id="listItem" value="#{shoppingCart.cartItems}" var="listItems" border="1">
+                                <p:column headerText="Id">
+                                    <h:outputText  value="#{listItems.id}" />
+                                </p:column>
+
+                                <p:column headerText="Name">
+                                    <h:outputText value="#{listItems.name}" />
+                                </p:column>
+
+                                <p:column headerText="Price">
+                                    <h:outputText value="#{listItems.price}" />
+                                </p:column>
+
+                                <p:column headerText="Description">
+                                    <h:outputText value="#{listItems.description}" />
+                                </p:column>
+
+
+                            </p:dataTable>
+
+                        </h:panelGrid>
+                    </p:panel>
+                </p:tab>
+
+            <h:panelGrid columns="2" cellspacing="1">
+                <h:commandButton value="Previous" action="newOrderContactInfo" />
+                <h:commandButton value="Cancel"	action="personalPage" />
+                <h:commandButton value="Confirm" action="#{ shoppingCart.checkout()}" />
+            </h:panelGrid>
+
+        </h:form>
+
+
+   </ui:define>
+</ui:composition>
+</html>

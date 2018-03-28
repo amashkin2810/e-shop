@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>
+        <ui:insert name="title">e-shop</ui:insert>
+    </title>
+
+</h:head>
+<h:body>
+
+    <p:layout style="min-width:400px;min-height:200px;">
+        <p:layoutUnit position="west"  size="150" >
+            <h:form size="150">
+                <p:growl id="growl" life="2000" />
+                <p:button  outcome="signUp" value="Sign up" id="signUp" update="growl"  styleClass="ui-priority-primary" />
+                <h1></h1>
+                <p:button  outcome="signIn" value="Sign In" id="signInp" update="growl"  styleClass="ui-priority-primary" />
+            </h:form>
+
+        </p:layoutUnit>
+
+        <p:layoutUnit position="center">
+            The Best e-shop
+        </p:layoutUnit>
+    </p:layout>
+    <div class="ui-g">
+        <div class="ui-g-10">
+            <ui:insert name="content">Default content</ui:insert>
+            </div>
+        <div class="ui-g-2">
+            <p:panel>
+                <h3> Shoping Cart</h3>
+                <h1></h1>
+            <h:outputFormat id="scart" value="Shoping Cart consist {0} items amount {1}">
+                <f:param value="#{shoppingCart.getNumberOfItems()}" />
+                <f:param value="#{shoppingCart.getTotal()}" />
+            </h:outputFormat>
+            </p:panel>
+        </div>
+    </div>
+
+    <div class="ui-g">
+        <div class="ui-g-12">
+                <h3> e-shop 2018</h3>
+        </div>
+    </div>
+
+</h:body>
+</html>

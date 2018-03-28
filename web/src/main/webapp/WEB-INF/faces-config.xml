@@ -1,0 +1,61 @@
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+              version="2.2">
+			  <application>
+        <locale-config>
+            <default-locale>ru_RU</default-locale>
+        </locale-config>
+    </application>
+
+        <navigation-rule>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <redirect/>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>signUp</from-outcome>
+            <redirect/>
+            <to-view-id>/signUp.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    <navigation-case>
+        <from-outcome>signIp</from-outcome>
+        <redirect/>
+        <to-view-id>/signIn.xhtml</to-view-id>
+    </navigation-case>
+</navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>personalPage</from-outcome>
+            <redirect/>
+            <to-view-id>/personalPage.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>newOrder</from-outcome>
+            <redirect/>
+            <to-view-id>/newOrder.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>newOrderDetailInfo</from-outcome>
+            <redirect/>
+            <to-view-id>/newOrderDetailInfo.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>newOrderContactInfo</from-outcome>
+            <redirect/>
+            <to-view-id>/newOrderContactInfo.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>
